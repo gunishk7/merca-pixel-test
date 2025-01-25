@@ -1,0 +1,81 @@
+{
+  "name": "merca-pixel",
+  "version": "1.0.0",
+  "description": "Merca Pixel Repository",
+  "author": "Merca <lakshya@merca.ai>",
+  "main": "src/index.js",
+  "private": true,
+  "engines": {
+    "node": ">=16",
+    "yarn": "*"
+  },
+  "scripts": {
+    "start": "pm2 start ./src/index.js --name=merca-pixel",
+    "dev": "nodemon  --trace-warnings ./src/index.js",
+    "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:fix": "yarn lint --fix",
+    "lint:watch": "yarn lint --watch",
+    "update-package": "yarn-upgrade-all",
+    "prettier": "prettier --write ."
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lakshya-merca/merca-pixel.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "node.js",
+    "mongodb",
+    "mongoose",
+    "passport",
+    "es6",
+    "es7",
+    "es8",
+    "es2017",
+    "mocha",
+    "istanbul",
+    "nyc",
+    "eslint",
+    "Travis CI",
+    "coveralls",
+    "REST",
+    "API",
+    "boilerplate",
+    "generator",
+    "starter project"
+  ],
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.9.1",
+    "@google-cloud/storage": "^7.15.0",
+    "@sentry/node": "^8.51.0",
+    "@sentry/profiling-node": "^8.51.0",
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "dotenv-safe": "^9.1.0",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "express-validation": "^4.1.1",
+    "helmet": "^8.0.0",
+    "http-status": "^2.1.0",
+    "method-override": "^3.0.0",
+    "moment-timezone": "^0.5.46",
+    "morgan": "^1.10.0",
+    "nocache": "^4.0.0",
+    "ramda": "^0.30.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "nodemon": "^3.1.9",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.4.2",
+    "yarn-upgrade-all": "^0.7.4"
+  }
+}
