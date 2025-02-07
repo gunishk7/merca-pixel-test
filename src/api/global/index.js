@@ -20,15 +20,6 @@ const asyncForEach = async (array, callback) => {
 // eslint-disable-next-line no-promise-executor-return
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const nullify = (data = [], schema = []) => {
-  data.forEach((obj) => (schema.length ? schema : R.keys(obj)).forEach((index) => {
-    // eslint-disable-next-line no-param-reassign
-    if (!obj[index]) obj[index] = null;
-    return obj;
-  }));
-  return data;
-};
-
 /**
  * Returns Table Object
  * @param {String} path
@@ -52,7 +43,6 @@ const devLog = (message) => {
 module.exports = {
   delay,
   asyncForEach,
-  nullify,
   decodeBigQueryPath,
   devLog,
 };
